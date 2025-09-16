@@ -312,7 +312,7 @@ const createLink = (dest: LinkType, originalLink: string, blockRef: string, alt:
         } else {
             encodedBlockRef = customEncodeURI(encodedBlockRef);
         }
-        return `[${alt}](${customEncodeURI(finalLink)}${fileExtension}#${encodedBlockRef})`;
+        return `[${alt == '' ? file.basename + ' > ' + blockRef : alt}](${customEncodeURI(finalLink)}${fileExtension}#${encodedBlockRef})`;
     }
 
     return '';
